@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js chap 39 to 68 Assignment</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="purple lighten-1 text-center">chapter 53 to 58 Task</h1>
+        <p>consider you have 4 images in a file as shown below: </p>
+        <div class="row">
+        <div id="wrapper">
+
+        </div>
+        <div class="text-center">
+        <p id="modalPara">If you click Zoom in button my font size will increase and you click zoom out my font size decrease</p>
+        <a class="btn-floating btn-large waves-effect waves-light red" onclick="zoom_in()"><i class="material-icons">zoom_in</i></a>
+        <a class="btn-floating btn-large waves-effect waves-light red" onclick="zoom_out()"><i class="material-icons">zoom_out</i></a>
+    </div>
+</div>
+        <h1 class="blue">Task 11 </h1>
+        <a href="javascript:void(0)" onclick="alertfunc()">
+            <h3 class="text-center">Click me to alert</h3>
+        </a>
+        <h1 class="red text-white">Task 12</h1><br>
+        <h1 class="blue">Mobile Phone Lookup</h1>
+        <div class="main z-depth-5">
+            <div class="items" onclick="thankYou()">
+                <img src="./images/01.jpg" alt="Mobile" width="200" height="150">
+                <h4 class="text-center">Motorola E1</h4>
+            </div>
+            <div class="items" onclick="thankYou()">
+                <img src="./images/02.jpg" alt="Mobile" width="200" height="150">
+                <h4 class="text-center">Samsung E4</h4>
+            </div>
+            <div class="items" onclick="thankYou()">
+                <img src="./images/03.jpg" alt="Mobile" width="200" height="150">
+                <h4 class="text-center">Huawei E4</h4>
+            </div>
+            <div class="items" onclick="thankYou()">
+                <img src="./images/04.jpg" alt="Mobile" width="200" height="150">
+                <h4 class="text-center">Infinix E4</h4>
+            </div>
+        </div>
+        <h1 class="blue">Task 13</h1>
+        <table id="table" class="highlight">
+            <tr>
+                <th>Name</th>
+                <th>Father Name</th>
+                <th>Age</th>
+                <th>Roll Number</th>
+                <th>Dob</th>
+                <th>Action</th>
+            </tr>
+            <tr>
+                <td>hamza</td>
+                <td>Yousuf</td>
+                <td>24</td>
+                <td>234145</td>
+                <td>24-5-1996</td>
+                <td><button class="waves-effect waves-light btn" onclick="deleterow(this)">Delete</button></td>
+            </tr>
+            <tr>
+                <td>Ali</td>
+                <td>Jazib </td>
+                <td>20</td>
+                <td>245454 </td>
+                <td>24-4-1994</td>
+                <td><button class="waves-effect waves-light btn" onclick="deleterow(this)">Delete</button></td>
+            </tr>
+            <tr>
+                <td>jamil</td>
+                <td>Yousuf</td>
+                <td>29</td>
+                <td>234146</td>
+                <td>4-5-1975</td>
+                <td><button class="waves-effect waves-light btn" onclick="deleterow(this)">Delete</button></td>
+            </tr>
+            <tr>
+                <td>Sana</td>
+                <td>Yousuf</td>
+                <td>20</td>
+                <td>234144</td>
+                <td>24-5-2000</td>
+                <td><button class="waves-effect waves-light btn" onclick="deleterow(this)">Delete</button></td>
+            </tr>
+            <tr>
+                <td>Asim</td>
+                <td>hamza</td>
+                <td>25</td>
+                <td>234145</td>
+                <td>24-5-1995</td>
+                <td><button class="waves-effect waves-light btn" onclick="deleterow(this)">Delete</button></td>
+            </tr>
+            <tr>
+                <td>hamza</td>
+                <td>Yousuf</td>
+                <td>24</td>
+                <td>234145</td>
+                <td>24-5-1996</td>
+                <td><button class="waves-effect waves-light btn" onclick="deleterow(this)">Delete</button></td>
+            </tr>
+            <tr>
+                <td>amin</td>
+                <td>Salahuddin</td>
+                <td>25</td>
+                <td>234144</td>
+                <td>24-5-1995</td>
+                <td><button class="waves-effect waves-light btn" onclick="deleterow(this)">Delete</button></td>
+            </tr>
+            <tr>
+                <td>hamza</td>
+                <td>Yousuf</td>
+                <td>24</td>
+                <td>234145</td>
+                <td>24-5-1996</td>
+                <td><button class="waves-effect waves-light btn" onclick="deleterow(this)">Delete</button></td>
+            </tr>
+            <tr>
+                <td>amin</td>
+                <td>Salahuddin</td>
+                <td>25</td>
+                <td>234144</td>
+                <td>24-5-1995</td>
+                <td><button class="waves-effect waves-light btn" onclick="deleterow(this)">Delete</button></td>
+            </tr>
+            <tr>
+                <td>Shahzaib</td>
+                <td>Aftab</td>
+                <td>20</td>
+                <td>234135</td>
+                <td>24-5-2000</td>
+                <td><button class="waves-effect waves-light btn" onclick="deleterow(this)">Delete</button></td>
+            </tr>
+        </table>
+
+
+        <h1 class="red text-white">Task 14</h1>
+        <img src="./images/car1.jpg" id="Carimg" width="100%" height="300" alt="Car Img" onmouseout="mouseOut()"
+            onmouseover="mouseOver()">
+        <div class="counter">
+            <h1 class="blue">Task 15</h1>
+
+            <button class="btn waves-effect waves-light" id="increment">Increment</button>
+            <span id="counterValue">0</span>
+            <button class="btn waves-effect waves-light pink lighten-1" id="decrement">Decrement</button>
+
+        </div>
+        <h1 class="red text-white">
+            Task 16
+        </h1>
+        <div class="row">
+            <form class="col s12" id="submitForm">
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input id="first_name" type="text" class="validate">
+                        <label for="first_name">First Name</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <input id="last_name" type="text" class="validate">
+                        <label for="last_name">Last Name</label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="email" type="email" class="validate">
+                        <label for="email">Email</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="password" type="password" class="validate">
+                        <label for="password">Password</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <button type="submit" class="waves-effect waves-light btn">Submit</button>
+                    </div>
+                </div>
+        </form>
+        </div>
+        <div id="formData"></div>
+        <h1 class="red text-white">
+            Task 17
+        </h1>
+        <p id="readpara">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nemo explicabo illo aspernatur
+            consequuntur
+            necessitatibus expedita <span onclick="readMore()" id="readmoretext" class="waves-effect waves-light btn"">Read more</span> </p>
+    
+
+        <h1 class=" blue">
+                Task 18
+                </h1>
+
+                <div class="row">
+                    <form class="col s12" id="todoAppForm">
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <input id="fname" type="text" class="validate">
+                                <label for="fname">First Name</label>
+                            </div>
+                            <div class="input-field col s6">
+                                <input id="lname" type="text" class="validate">
+                                <label for="lname">Last Name</label>
+                            </div>
+                        </div>
+        
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input id="emailnew" type="email" class="validate">
+                                <label for="emailnew">Email</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <button type="submit" class="waves-effect waves-light btn">Submit</button>
+                            </div>
+                        </div>
+                </form>
+                </div>
+
+                <table id="table" class="highlight">
+                    <tr>
+                        <th>first Name</th>
+                        <th>Last Name</th>
+                        <th>Email</th>
+                        <th colspan="2" class="text-center">Action</th>
+                    </tr>
+                    <tr>
+                        <td>hamza</td>
+                        <td>Yousuf</td>
+                        <td>24</td>
+                        <td>234145</td>
+                        <td>24-5-1996</td>
+                        <td><button class="waves-effect waves-light btn pink darken-1"
+                                onclick="deleterow(this)">Delete</button></td>
+                        <td><button class="waves-effect waves-light btn" onclick="editrow(this)">edit</button></td>
+
+                    </tr>
+                    
+                </table>
+
+
+                <h1 class="red text-white">Task 19</h1>
+
+                <div> <h1> DOM </h1> <div id='form-content' class='content'> <label for='first-name'>First Name</label> <input type='text' id='first-name'/> <label for='last-name'>Last Name</label> <input type='text' id='last-name'/> <label for='email'>Email</label> <input type='text' id='email-new'/> </div><div id='main-content' class='content' ><p class='render'> First Name : Alex</p ><p class='render' id='lastName'>Last Name: Bank</p ><p class='render'> Email : alexbank@example.com</p ><p class='render'> Country : Pakistan </p ><p class='render'> contact : +92 300 1234567</p ></div ></div>
+                   <p>i. Get element of id “main-content” and assign them in a variable.</p>
+                   <p>ii. Display all child elements of “main-content” element.</p>
+                   <div id="mainContentData"></div>
+                   <p>Get all elements of class “render” and show their innerHTML
+                    in browser</p>
+                   <div id="renderData">
+
+                   </div>
+                   </div>
+
+
+                <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+
+                <script src="app.js"></script>
+
+</body>
+
+</html>

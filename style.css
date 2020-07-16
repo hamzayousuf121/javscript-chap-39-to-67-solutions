@@ -1,0 +1,62 @@
+.blue{
+    color: blue;
+    text-align: center;
+
+}
+.red{
+    color: red;
+    text-align: center;
+}
+
+.modal-open{
+    display: block;
+    width: 50% !important;
+    height: 300px;
+}
+.modal-close {
+    display: flex;
+}
+.btn-model{
+    bottom:138px;
+    right: 0;
+   
+}
+#wrapper{
+    display: flex;
+    justify-content: space-around;
+    
+}
+.main{
+    display: flex;;
+    justify-content: space-around;
+
+}
+.text-white{
+    color: white;
+}
+.text-center{
+    text-align: center;
+}
+#counterValue{
+    color: red;
+    font: 900;
+    font-weight: bolder;
+    font-size: 25px;
+}
+.counter{
+    text-align: center;
+}
+#table{
+    width: 100%;
+    height: auto;
+    border: 2px solid grey;
+    border-collapse: collapse;
+}
+tr, td
+{
+    border: 2px solid grey;
+
+}
+td,th{
+    text-align: center;
+}
