@@ -289,15 +289,14 @@ function readMore() {
 // appear with the values of that row.
 // modealCode
 
-$(document).ready(function(){
-    $('.modal').modal();
-  });
 
 var submitForm2 = document.querySelector('#todoAppForm');
 var todoList = document.querySelector('#todoList');
 
 function deleteAllTodo() {
-	todoList.innerHTML = '';
+	//    todoList.querySelectorAll('*').forEach(n => n.remove());
+	todoList.innerHTML  = '';
+	location.reload();
 }
 
 submitForm2.addEventListener('submit', (e) => {
@@ -307,6 +306,8 @@ submitForm2.addEventListener('submit', (e) => {
 	var button = document.createElement('a')
 	var editButton = document.createElement('a')
 
+	if(fname.value != '' || fname.value != ' '){
+
 	li.setAttribute('class', 'collection-item')
 
 	button.setAttribute('class', 'waves-effect waves-light btn red text-white right mt-8')
@@ -315,7 +316,6 @@ submitForm2.addEventListener('submit', (e) => {
 
 	editButton.setAttribute('class', 'waves-effect waves-light btn right mt-8')
 	editButton.setAttribute('onclick', 'editTodo(this)')
-	editButton.setAttribute('data-target', 'modal1')
 	editButton.appendChild(document.createTextNode('Edit'))
 
 	li.appendChild(document.createTextNode(fname.value))
@@ -323,6 +323,7 @@ submitForm2.addEventListener('submit', (e) => {
 	li.appendChild(editButton)
 	todoList.appendChild(li)
 	fname.value = '';
+	}
 })
 
 	function editTodo(e) {
@@ -334,6 +335,7 @@ submitForm2.addEventListener('submit', (e) => {
 	deleteTodo = (e) => {
 		e.parentNode.remove();
 	}
+
 
 //End Chap 49 to 52
 
