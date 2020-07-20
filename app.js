@@ -60,15 +60,15 @@ function average(EnglishMarks, UrduMarks, MathMarks) {
 	var total = EnglishMarks + UrduMarks + MathMarks;
 	var avg = (total / 3).toFixed(2);
 	return {
-		totalNumber : total,
-		avg : avg
+		totalNumber: total,
+		avg: avg
 	}
 }
 
 function percentage(totalMarks, obtainedMarks) {
-	return (( obtainedMarks * 100 ) / totalMarks).toFixed(2)
+	return ((obtainedMarks * 100) / totalMarks).toFixed(2)
 }
-function mainFunction(){
+function mainFunction() {
 	var avergaeResult = average(55, 68, 77);
 	console.log(`Average of 3 subjects is ${avergaeResult.avg}`)
 
@@ -113,32 +113,32 @@ function findOccurrences() {
 	var str = "Pleases read this application and give me gratuity";
 	var count = 0;
 	let haveSeenVowel = false;
-  
+
 	for (var i = 0; i < str.toLowerCase().length; i++) {
-	  switch (str[i]) {
-		case 'a':
-		case 'e':
-		case 'i':
-		case 'o':
-		case 'u':
-		  {
-			if (haveSeenVowel) {
-			  count++;
-			  haveSeenVowel = false;
-			} else {
-			  haveSeenVowel = true;
-			}
-			break;
-		  }
-		default:
-		  haveSeenVowel = false
-	  }
+		switch (str[i]) {
+			case 'a':
+			case 'e':
+			case 'i':
+			case 'o':
+			case 'u':
+				{
+					if (haveSeenVowel) {
+						count++;
+						haveSeenVowel = false;
+					} else {
+						haveSeenVowel = true;
+					}
+					break;
+				}
+			default:
+				haveSeenVowel = false
+		}
 	}
-  
+
 	return count
-  }
-  
-  console.log(findOccurrences());
+}
+
+console.log(findOccurrences());
 
 // Task 8
 // The distance between two cities (in km.) is input through the
@@ -166,14 +166,14 @@ console.log(centimeters(100))
 // Overtime is paid at the rate of Rs. 12.00 per hour for every hour
 // worked above 40 hours. Assume that employees do not work
 // for fractional part of an hour.
-	function overtimePay(workingHours){
-		var hourlyPay = 12;
-		var hours = workingHours - 40;
-		var result = hourlyPay * hours;
-		return result;
-	}
-	var overtimeMoney = overtimePay(55);
-	console.log('You earn ' + overtimeMoney + ' Overtime  rupess in a month')
+function overtimePay(workingHours) {
+	var hourlyPay = 12;
+	var hours = workingHours - 40;
+	var result = hourlyPay * hours;
+	return result;
+}
+var overtimeMoney = overtimePay(55);
+console.log('You earn ' + overtimeMoney + ' Overtime  rupess in a month')
 // Task 10
 // A cashier has currency notes of denominations 10, 50 and
 // 100. If the amount to be withdrawn is input through the
@@ -287,20 +287,53 @@ function readMore() {
 // takes student’s details and show each student detail in  table. Each row of table must contain a delete button and
 // an edit button. On click on delete button entire row should be deleted. On click on edit button, a hidden form will
 // appear with the values of that row.
+// modealCode
+
+$(document).ready(function(){
+    $('.modal').modal();
+  });
 
 var submitForm2 = document.querySelector('#todoAppForm');
-var formData = document.querySelector('#formData');
+var todoList = document.querySelector('#todoList');
+
+function deleteAllTodo() {
+	todoList.innerHTML = '';
+}
+
 submitForm2.addEventListener('submit', (e) => {
 	e.preventDefault();
 	var fname = document.getElementById('fname')
-	var lname = document.getElementById('lname')
-	var emailnew = document.getElementById('emailnew')
+	var li = document.createElement('li')
+	var button = document.createElement('a')
+	var editButton = document.createElement('a')
 
+	li.setAttribute('class', 'collection-item')
+
+	button.setAttribute('class', 'waves-effect waves-light btn red text-white right mt-8')
+	button.setAttribute('onclick', 'deleteTodo(this)')
+	button.appendChild(document.createTextNode('Delete'))
+
+	editButton.setAttribute('class', 'waves-effect waves-light btn right mt-8')
+	editButton.setAttribute('onclick', 'editTodo(this)')
+	editButton.setAttribute('data-target', 'modal1')
+	editButton.appendChild(document.createTextNode('Edit'))
+
+	li.appendChild(document.createTextNode(fname.value))
+	li.appendChild(button)
+	li.appendChild(editButton)
+	todoList.appendChild(li)
 	fname.value = '';
-	lname.value = '';
-	emailnew.value = '';
 })
 
+	function editTodo(e) {
+		var value = e.parentNode.firstChild.nodeValue;
+		var userPrompt = prompt('Enter your Updated Todos Value', value)
+		e.parentNode.firstChild.nodeValue = userPrompt;
+	}
+
+	deleteTodo = (e) => {
+		e.parentNode.remove();
+	}
 
 //End Chap 49 to 52
 
@@ -323,25 +356,32 @@ submitForm2.addEventListener('submit', (e) => {
 // Set this line in end of function
 // setTimeout(()=>{ modal.style.display = "none"; }, 550)
 
-var images = ['./images/12.jpg', './images/13.jpg', './images/14.png', './images/15.jpg']
+var images = ['images/12.jpg', 'images/13.jpg', 'images/14.png', 'images/15.jpg']
 var wrapper = document.querySelector('#wrapper');
 for (var i = 0; i < images.length; i++) {
-	wrapper.innerHTML += `<img src="${images[i]}" alt="img" id="modal${i}" width="25%" onclick='openModel(id)' /><button id="modal${i}" class="btn-model" onclick='onClosedImagModal(id,this)'>X</button>`;
+	wrapper.innerHTML += `<img src="${images[i]}" alt="img" id="modal${i}" width="25%" onclick='openModel(this)' />`;
 }
-
-var openModel = (modal) => {
-	var modal = document.getElementById(modal);
-	modal.classList.add('modal-open')
+var modal = document.getElementById('modal');
+var modalImg = document.getElementById('modalImg');
+var openModel = (e) => {
+	// var modal = document.getElementById(modal);
 	modal.classList.remove('modal-close');
+	modal.classList.add('modal-open')
+	// modal.classList.remove('modal-close');
+	modalImg.src = e.src;
+	console.log(modalImg.src)
+	console.log(e.src)
 }
 
-function onClosedImagModal(modal, button) {
-	console.log(modal)
-	var modal = document.getElementById(modal);
-	modal.classList.add('modal-close')
+function onClosedImagModal() {
+	console.log('agaya')
+	// var modal = document.getElementById(modal);
 	modal.classList.remove('modal-open');
-	setTimeout(() => { modal.style.display = "none"; }, 550)
-	setTimeout(() => { button.style.display = "none"; }, 550)
+
+	modal.classList.add('modal-close')
+	// modal.classList.remove('modal-open');
+	// setTimeout(() => { modal.style.display = "none"; }, 550)
+	// setTimeout(() => { button.style.display = "none"; }, 550)
 
 }
 

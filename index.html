@@ -16,8 +16,14 @@
         <p>consider you have 4 images in a file as shown below: </p>
         <div class="row">
         <div id="wrapper">
-
         </div>
+        <br>
+       
+        <div id="modal" class="modal-close">
+            <img src="" id="modalImg" style="width: 900px; height: 300px;"/>
+            <a class="btn-floating  waves-effect waves-light red" onclick="onClosedImagModal()" ><i class="material-icons">close</i></a>
+        </div>
+<br>   
         <div class="text-center">
         <p id="modalPara">If you click Zoom in button my font size will increase and you click zoom out my font size decrease</p>
         <a class="btn-floating btn-large waves-effect waves-light red" onclick="zoom_in()"><i class="material-icons">zoom_in</i></a>
@@ -205,48 +211,28 @@
                         <div class="row">
                             <div class="input-field col s6">
                                 <input id="fname" type="text" class="validate">
-                                <label for="fname">First Name</label>
+                                <label for="fname">Enter Todo</label>
                             </div>
-                            <div class="input-field col s6">
-                                <input id="lname" type="text" class="validate">
-                                <label for="lname">Last Name</label>
-                            </div>
-                        </div>
-        
+                      
                         <div class="row">
-                            <div class="input-field col s12">
-                                <input id="emailnew" type="email" class="validate">
-                                <label for="emailnew">Email</label>
+                            <div class="input-field col s3">
+                                <button type="submit" class="waves-effect waves-light btn" >Add todo</button>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="input-field col s12">
-                                <button type="submit" class="waves-effect waves-light btn">Submit</button>
+                            <div class="input-field col s3">
+                                <button type="submit" class="waves-effect cyan lighten-2 waves-light btn" onclick="deleteAllTodo()" style="margin-left: 11px;">Delete All</button>
                             </div>
                         </div>
                 </form>
-                </div>
-
-                <table id="table" class="highlight">
-                    <tr>
-                        <th>first Name</th>
-                        <th>Last Name</th>
-                        <th>Email</th>
-                        <th colspan="2" class="text-center">Action</th>
-                    </tr>
-                    <tr>
-                        <td>hamza</td>
-                        <td>Yousuf</td>
-                        <td>24</td>
-                        <td>234145</td>
-                        <td>24-5-1996</td>
-                        <td><button class="waves-effect waves-light btn pink darken-1"
-                                onclick="deleterow(this)">Delete</button></td>
-                        <td><button class="waves-effect waves-light btn" onclick="editrow(this)">edit</button></td>
-
-                    </tr>
-                    
-                </table>
+            </div>
+    </div>
+    
+    <div>
+        <ul class="collection" id="todoList">
+          
+          </ul>
+    </div>
 
 
                 <h1 class="red text-white">Task 19</h1>

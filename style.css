@@ -10,16 +10,22 @@
 
 .modal-open{
     display: block;
-    width: 50% !important;
+    width: 100% !important;
     height: 300px;
 }
 .modal-close {
-    display: flex;
+    display: none;
 }
 .btn-model{
     bottom:138px;
     right: 0;
    
+}
+.right{
+    float: right;
+}
+.mt-8{
+    margin-top: -8px;
 }
 #wrapper{
     display: flex;
